@@ -2,6 +2,6 @@
   hosts: all
   tasks:
    - ansible.builtin.file:
-      path: /ec2-user/home/demo.txt
+      path: /home/ec2-user/demo.txt
       state: touch
       mode: u=rw,g=r,o=r    
