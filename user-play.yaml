@@ -1,0 +1,6 @@
+- name: Add the user 'johnd' with a specific uid and a primary group of 'admin'
+  hosts: all
+  tasks:
+  - name: user add demo
+    user:
+     name: demo
