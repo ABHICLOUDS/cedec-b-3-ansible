@@ -1,6 +1,7 @@
 - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
   hosts: all
-  ansible.builtin.file:
-    path: /ec2-user/home/demo.txt
-    state: touch
-    mode: u=rw,g=r,o=r    
+  tasks:
+   - ansible.builtin.file:
+      path: /ec2-user/home/demo.txt
+      state: touch
+      mode: u=rw,g=r,o=r    
