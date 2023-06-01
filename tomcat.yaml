@@ -52,7 +52,7 @@
    - name: Copy file with owner and permissions
      copy:
         src: ./student.war
-        dest: /opt/tomcat8/webapps
+        dest: /opt/tomcat8/webapps/
         owner: tomcat
         group: tomcat
         mode: '0777'
