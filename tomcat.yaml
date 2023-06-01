@@ -50,6 +50,7 @@
      shell: "mv /opt/tomcat8/apache*/* /opt/tomcat8"
 
    - name: Copy file with owner and permissions
+     become: yes
      copy:
         src: ./student.war
         dest: /opt/tomcat8/webapps/
