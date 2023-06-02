@@ -4,5 +4,5 @@
   ignore_errors: True
   become: true
   roles:
-      -appserver 
+     - appserver 
 ...      
