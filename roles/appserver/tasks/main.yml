@@ -1,26 +1,25 @@
----
-- name: Install Java
+- name: Install the latest version of Apache
   ansible.builtin.yum:
     name: java
     state: latest
 
-- name: Download Tomcat tar
+- name: Download tomcat tar
   ansible.builtin.get_url:
-    url: "{{ tomcat_url }}"
-    dest: "{{ tomcat_destination }}"
-    mode: "{{ tomcat_mode }}"
+    url: "{{TOMCAT_URL}}" 
+    dest: /home/ec2-user/
+    mode: '0777'
 
-- name: Extract Tomcat
+- name: Extract tomcat /home/ec2-user
   ansible.builtin.unarchive:
-    src: "{{ tomcat_destination }}/{{ tomcat_zip }}"
-    dest: "{{ tomcat_destination }}"
+    src:  /home/ec2-user/{{TOMCAT_ZIP}} 
+    dest: /home/ec2-user/
 
-- name: Change file ownership, group, and permissions
+- name: Change file ownership, group and permissions
   ansible.builtin.file:
-    path: "{{ tomcat_destination }}/{{ tomcat }}/bin/startup.sh"
-    mode: "{{ tomcat_file_mode }}"
+    path: /home/ec2-user/{{TOMCAT}}/bin/startup.sh
+    mode: '0777'
 
-- name: Start Tomcat
-  command: ./startup.sh
+- name: start tomcat
+  command: ./startup.sh 
   args:
-    chdir: "{{ tomcat_destination }}/{{ tomcat }}/bin"
+   chdir: /home/ec2-user/{{TOMCAT}}/bin

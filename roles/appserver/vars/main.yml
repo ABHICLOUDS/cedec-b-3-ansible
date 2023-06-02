@@ -1,7 +1,3 @@
----
-tomcat_url: "https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.89/bin/apache-tomcat-8.5.89.tar.gz"
-tomcat_zip: "apache-tomcat-8.5.89.tar.gz"
-tomcat: "apache-tomcat-8.5.89"
-tomcat_destination: "/home/ec2-user/"
-tomcat_mode: "0777"
-tomcat_file_mode: "0777"
+TOMCAT_URL: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.89/bin/apache-tomcat-8.5.89.tar.gz
+TOMCAT_ZIP: apache-tomcat-8.5.89.tar.gz
+TOMCAT: apache-tomcat-8.5.89
