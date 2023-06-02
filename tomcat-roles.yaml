@@ -1,8 +1,7 @@
 ---
-- name: Download Tomcat8 from tomcat.apache.org
+- name: Install Tomcat
   hosts: all
   ignore_errors: True
   become: true
   roles:
-     - appserver 
-...      
+    - appserver
