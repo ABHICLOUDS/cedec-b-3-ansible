@@ -1,0 +1,26 @@
+---
+- name: Install Java
+  ansible.builtin.yum:
+    name: java
+    state: latest
+
+- name: Download Tomcat tar
+  ansible.builtin.get_url:
+    url: "{{ tomcat_url }}"
+    dest: "{{ tomcat_destination }}"
+    mode: "{{ tomcat_mode }}"
+
+- name: Extract Tomcat
+  ansible.builtin.unarchive:
+    src: "{{ tomcat_destination }}/{{ tomcat_zip }}"
+    dest: "{{ tomcat_destination }}"
+
+- name: Change file ownership, group, and permissions
+  ansible.builtin.file:
+    path: "{{ tomcat_destination }}/{{ tomcat }}/bin/startup.sh"
+    mode: "{{ tomcat_file_mode }}"
+
+- name: Start Tomcat
+  command: ./startup.sh
+  args:
+    chdir: "{{ tomcat_destination }}/{{ tomcat }}/bin"
