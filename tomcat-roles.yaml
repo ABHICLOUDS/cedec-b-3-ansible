@@ -1,0 +1,7 @@
+---
+- name: Download Tomcat8 from tomcat.apache.org
+  hosts: all
+  ignore_errors: True
+  become: true
+  roles:
+      -appserver 
