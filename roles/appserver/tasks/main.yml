@@ -13,7 +13,7 @@
   ansible.builtin.unarchive:
     src:  /home/ec2-user/{{TOMCAT_ZIP}} 
     dest: /home/ec2-user/
-    remote_src: true
+    #remote_src: true
 
 - name: Change file ownership, group and permissions
   ansible.builtin.file:
